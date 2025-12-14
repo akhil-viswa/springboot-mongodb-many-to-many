@@ -29,7 +29,7 @@ public class UserService {
     public List<UserRoleDTO> getUserWithRoles(String userId) {
         Aggregation aggregation = Aggregation.newAggregation(
                 Aggregation.match(Criteria.where("_id").is(userId)),
-                Aggregation.lookup("roles", "roleIds", "_id", "roles")
+                Aggregation.lookup("roles", "roleIds", "id", "roles")
         );
 
 
